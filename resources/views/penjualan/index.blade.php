@@ -7,6 +7,12 @@
 <body>
     <div class="container">
         <h2>Data Penjualan</h2>
+        <div class="d-inline-flex">
+            <canvas id="barChart" width="400" height="200"></canvas>
+        </div>
+        <div class="d-inline-flex">
+            <canvas id="pieChart" width="400" height="200"></canvas>
+        </div>
         <table class="table table-bordered">
             <thead>
                 <tr>
@@ -31,4 +37,47 @@
         </table>
     </div>
 </body>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+            // Sample data for the bar chart
+            var data = @json($reportSales);
+
+            // Configuration options for the chart
+            var options = {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                    },
+                },
+            };
+
+            // Create the bar chart
+            var ctx = document.getElementById("barChart").getContext("2d");
+            var barChart = new Chart(ctx, {
+                type: "bar",
+                data: data,
+                options: options,
+            });
+    </script>
+    <script>
+        // Sample data for the pie chart
+        var data = @json($reportGoods);
+        console.log(data);
+
+        // Configuration options for the chart
+        var options = {
+            responsive: true,
+            maintainAspectRatio: false,
+        };
+
+        // Create the pie chart
+        var ctx = document.getElementById('pieChart').getContext('2d');
+        var pieChart = new Chart(ctx, {
+            type: 'pie',
+            data: data,
+            options: options,
+        });
+    </script>
 </html>
