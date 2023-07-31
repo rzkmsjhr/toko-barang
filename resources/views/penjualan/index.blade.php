@@ -6,17 +6,19 @@
 </head>
 <body>
     <div class="container">
-        <h2>Data Penjualan</h2>
-        <div class="d-inline-flex">
-            <canvas id="barChart" width="400" height="200"></canvas>
-        </div>
-        <div class="d-inline-flex">
-            <canvas id="pieChart" width="400" height="200"></canvas>
+        <h2 class="my-3">Data Penjualan</h2>
+        <div class="d-flex justify-content-center my-5">
+            <div>
+                <canvas id="barChart" width="500" height="200"></canvas>
+            </div>
+            <div>
+                <canvas id="pieChart" width="500" height="200"></canvas>
+            </div>
         </div>
         <table class="table table-bordered">
             <thead>
                 <tr>
-                    <th>No</th>
+                    <th>ID Penjualan</th>
                     <th>Tanggal Penjualan</th>
                     <th>Nama Konsumen</th>
                     <th>Alamat</th>

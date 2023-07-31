@@ -6,7 +6,7 @@
 </head>
 <body>
     <div class="container">
-        <h2>Detail Penjualan #{{ $penjualan->Id_Penjualan }}</h2>
+        <h2 class="my-3 d-inline-block">Detail Penjualan #{{ $penjualan->Id_Penjualan }}</h2>
         <table class="table table-bordered">
             <thead>
                 <tr>
@@ -41,6 +41,7 @@
                 @endif
             </tbody>
         </table>
+    <button type="button" class="btn btn-info my-1" onclick="history.back()">Kembali</button>
     </div>
 </body>
 </html>
