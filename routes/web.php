@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PenjualanController;
+use App\Http\Controllers\DetailPenjualanController;
 
 /*
 |--------------------------------------------------------------------------
@@ -12,7 +14,5 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [PenjualanController::class, 'index'])->name('penjualan.index');
+Route::get('/penjualan/{id}', [PenjualanController::class, 'show'])->name('penjualan.show');
